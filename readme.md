@@ -10,6 +10,7 @@
 
 - Object persistence?
     - Using persistent storage or generators on initialisation.
+    - Could be DB or yaml.. I like yaml unless sqlite works..
 
 
   - Packages
@@ -22,6 +23,9 @@
         -tests
     - utils utilities...
 
+Classes
+
+GAME
 - Player
     - name
     - health
@@ -42,6 +46,15 @@
     - Weaknesses (?)
     - Health
     - Strength
+
+- Potions
+- Treasures
+- Weapons(?)
 - Map
     - ArrayList w. Rooms
 
+REPOSITORY
+- PlayerRepository (?)
+- RoomRepository
+- MonsterRepository
+- WeaponsRepository
