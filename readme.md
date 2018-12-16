@@ -47,9 +47,11 @@ GAME
     - Health
     - Strength
 
-- Potions
 - Treasures
-- Weapons(?)
+    - Name -- potion of life, shield of cats, crossbow etc.
+    - Description
+    - Health //does the treasure have health effect?
+    - Strength // does the treasure have strength effect?
 - Map
     - ArrayList w. Rooms
 
