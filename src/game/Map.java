@@ -2,9 +2,9 @@ package game;
 
 public class Map {
     public static String locale(int x, int y){
-        Room[][] location = new Room[6][6];
+        Room[][] location = new Room[6][6]; //for now, tha map is a 6x6 grid. We could expand it.
         
-        location[0][0] = new Room("a");
+        location[0][0] = new Room("a"); // We need to fill in the descriptions with real content. 
         location[0][1] = new Room("b");
         location[0][2] = new Room("c");
         location[0][3] = new Room("d");
