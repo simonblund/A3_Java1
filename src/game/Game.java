@@ -1,5 +1,7 @@
 package game;
 
+import repository.Monsters;
+import test.MonsterMaker;
 import test.RoomGenerator;
 import utility.Artwork;
 
@@ -24,9 +26,13 @@ public class Game {
         Scanner sc = new Scanner(System.in);
         boolean active = true;
 
+        MonsterMaker.monstersInList();
+
         System.out.println("1. New Game");
         System.out.println("2. Scoreboard");
         System.out.println("3. Exit");
+        System.out.println("4. Create your own monster");
+        System.out.println("5. Save your monsters to File");
 
         while(active) {
             int choice = sc.nextInt();
@@ -41,6 +47,14 @@ public class Game {
                 }
                 case 3: {
                     System.exit(0);
+                    break;
+                }
+                case 4: {
+                    MonsterMaker.monsterForm();
+                    break;
+                }
+                case 5: {
+                    Monsters.saveMonsters();
                     break;
                 }
                 default: {
