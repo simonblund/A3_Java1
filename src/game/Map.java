@@ -16,5 +16,9 @@ public class Map {
         return location[x][y].getDescription();
     }
 
+    public static Monster getRoomMonster(int x, int y){
+        return location[x][y].getMonster();
+    }
+
     
 }

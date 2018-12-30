@@ -13,7 +13,6 @@ public class Game {
     /*
     FIELDS / ATTRIBUTES
      */
-    public static String name;
     public static Monsters gameMonsters = new Monsters();
 
     /*
@@ -23,7 +22,6 @@ public class Game {
         System.out.println(Artwork.gameName());
         gameMonsters.setMonsters(new ArrayList<Monster>());
         gameMonsters = MonsterXMLparse.getMonsters();
-        RoomGenerator.placeExampleRooms();
         gameMenu();
     }
 
@@ -73,10 +71,14 @@ public class Game {
     } // EOM gameMenu
 
     private static void newGame(){
+        Player player = new Player();
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter your name below");
-        name = sc.nextLine();
-        GamePlay.play();
+        player.setName(sc.nextLine());
+        player.setHealth(100);
+        player.setStrength(10);
+        RoomGenerator.placeExampleRooms();
+        GamePlay.play(player);
     }
 
     

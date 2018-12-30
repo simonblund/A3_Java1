@@ -9,14 +9,8 @@ public class Monster {
     // Fields
 
     private String name;
-
-
     private String description;
-
-
     private int strength;
-
-
     private int health;
 
     //Getters and Setters

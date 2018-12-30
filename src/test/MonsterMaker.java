@@ -17,7 +17,7 @@ public class MonsterMaker {
         monster.setName(sc.nextLine());
 
         System.out.println("monster description:");
-        monster.setDescription(sc.next());
+        monster.setDescription(sc.nextLine());
 
         System.out.println("monster health (1-100):");
         monster.setHealth(sc.nextInt());
