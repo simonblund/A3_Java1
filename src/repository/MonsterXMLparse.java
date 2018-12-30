@@ -2,7 +2,11 @@ package repository;
 
 import game.Monster;
 
-import javax.xml.bind.JAXB;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,19 +16,40 @@ import java.util.List;
 
 public class MonsterXMLparse {
 
-    public static void setMonsters(List<Monster> monsters){
+    public static void setMonsters(Monsters monsters){
         try(BufferedWriter output = Files.newBufferedWriter(Paths.get("monsters.xml"))){
-            System.out.println(monsters.get(0).getName());
-            JAXB.marshal(monsters, output);
-        }
 
+            JAXBContext jaxbContext = JAXBContext.newInstance(Monsters.class);
+            Marshaller jaxBMarshaller = jaxbContext.createMarshaller();
+            jaxBMarshaller.marshal(monsters, output);
+        }
 
         catch (IOException ioException){
             System.err.println("File write error");
         }
+        catch (JAXBException ee){
+            ee.printStackTrace();
+        }
 
 
 
+    }
+
+    public static Monsters getMonsters(){
+        Monsters monsters = null;
+        try(BufferedReader input = Files.newBufferedReader(Paths.get("monsters.xml"))){
+            JAXBContext jaxbContext = JAXBContext.newInstance(Monsters.class);
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+
+            monsters = (Monsters) jaxbUnmarshaller.unmarshal(input);
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+        catch (JAXBException je){
+            je.printStackTrace();
+        }
+        return monsters;
     }
 
 }

@@ -1,10 +1,12 @@
 package game;
 
+import repository.MonsterXMLparse;
 import repository.Monsters;
 import test.MonsterMaker;
 import test.RoomGenerator;
 import utility.Artwork;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
@@ -12,12 +14,15 @@ public class Game {
     FIELDS / ATTRIBUTES
      */
     public static String name;
+    public static Monsters gameMonsters = new Monsters();
 
     /*
     METHODS
      */
     public static void main(String[] args) {
         System.out.println(Artwork.gameName());
+        gameMonsters.setMonsters(new ArrayList<Monster>());
+        gameMonsters = MonsterXMLparse.getMonsters();
         RoomGenerator.placeExampleRooms();
         gameMenu();
     }
@@ -26,7 +31,8 @@ public class Game {
         Scanner sc = new Scanner(System.in);
         boolean active = true;
 
-        MonsterMaker.monstersInList();
+
+        MonsterMaker.monstersInList(); // TODO remove this line before turn in.
 
         System.out.println("1. New Game");
         System.out.println("2. Scoreboard");
@@ -54,7 +60,7 @@ public class Game {
                     break;
                 }
                 case 5: {
-                    Monsters.saveMonsters();
+                    MonsterXMLparse.setMonsters(gameMonsters);
                     break;
                 }
                 default: {

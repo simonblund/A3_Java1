@@ -2,22 +2,31 @@ package repository;
 
 import game.Monster;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import java.util.ArrayList;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
+
+@XmlRootElement(name = "monsters")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Monsters {
     @XmlElement(name = "monster")
-    private static List<Monster> monsters = new ArrayList<>();
+    private List<Monster> monsters;
 
-    public static  List<Monster> getMonsters() {return monsters;}
+    public boolean monstersEmpty(){
+        return monsters.isEmpty();
+    }
 
-    public static void addMonster(Monster monster){
+    public  List<Monster> getMonsters() {return monsters;}
+
+    public void addMonster(Monster monster){
         monsters.add(monster);
     }
 
-    public static void saveMonsters(){
-        MonsterXMLparse.setMonsters(monsters);
-
+    public void setMonsters(List<Monster> monsters) {
+        this.monsters = monsters;
     }
+
 }

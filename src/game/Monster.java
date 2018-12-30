@@ -3,20 +3,20 @@ package game;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "product")
+@XmlRootElement(name = "monster")
 public class Monster {
 
     // Fields
-    @XmlAttribute(name = "name")
+
     private String name;
 
-    @XmlAttribute(name = "description")
+
     private String description;
 
-    @XmlAttribute(name = "strength")
+
     private int strength;
 
-    @XmlAttribute(name = "health")
+
     private int health;
 
     //Getters and Setters

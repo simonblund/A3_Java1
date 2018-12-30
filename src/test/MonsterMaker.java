@@ -14,7 +14,7 @@ public class MonsterMaker {
         Monster monster = new Monster();
 
         System.out.println("monster name:");
-        monster.setName(sc.next());
+        monster.setName(sc.nextLine());
 
         System.out.println("monster description:");
         monster.setDescription(sc.next());
@@ -25,9 +25,9 @@ public class MonsterMaker {
         System.out.println("monster strength(1-100):");
         monster.setStrength(sc.nextInt());
 
-        Monsters.addMonster(monster);
+        Game.gameMonsters.addMonster(monster);
 
-        System.out.println("Saved. \n create another one? enter (1) or just enter to return.");
+        System.out.println("Saved. \n create another one? enter (1) OR go back to the main menu by entering 2.");
 
         if(sc.nextInt()==1){
             monsterForm();
@@ -35,9 +35,12 @@ public class MonsterMaker {
         Game.gameMenu();
     }
     public static void monstersInList(){
-        List<Monster> monsters = Monsters.getMonsters();
-        for(int i=0;i<monsters.size();i++){
-            System.out.println(monsters.get(i).getName());
+
+        if(!Game.gameMonsters.monstersEmpty()) {
+            List<Monster> monsters = Game.gameMonsters.getMonsters();
+            for (int i = 0; i < monsters.size(); i++) {
+                System.out.println(monsters.get(i).getName());
+            }
         }
     }
 }
