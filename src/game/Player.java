@@ -5,6 +5,15 @@ public class Player {
     private int health;
     private int strength;
     private int gold;
+    private int healthPotionsCarried;
+
+    public int getHealthPotions() {
+        return healthPotionsCarried;
+    }
+
+    public void setHealthPotions(int healthPotions) {
+        this.healthPotionsCarried = healthPotions;
+    }
 
     public String getName() {
         return name;
