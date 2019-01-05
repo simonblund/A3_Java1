@@ -1,12 +1,13 @@
 package game;
 
-import java.util.Random;
+import utility.Dice;
 import java.util.Scanner;
 
 public class Fight {
     public static void meetMonster(Monster monster, Player player){
-        Random dice = new Random();
         if (monster.getHealth()>0){
+            System.out.println("");
+            System.out.println("");
             System.out.println("Something moves in the dark...");
             System.out.println("You look closer, and suddenly you see a beast..");
             System.out.println("It is the "+monster.getName()+", and it wants to fight you.");
@@ -15,7 +16,7 @@ public class Fight {
             click.nextLine();
             System.out.println("You decide to use a dice to make the decision, if the dice shows 5 or 6 you'll run away.");
 
-            int res = dice.nextInt(7);
+            int res = utility.Dice.dice();
             System.out.println("You roll the dice...");
             System.out.println(res);
             if(res < 5){
@@ -52,7 +53,7 @@ public class Fight {
     }
 
     public static int hit(int strength, int health){
-        int dice = new Random().nextInt(7);
+        int dice = Dice.dice();
         System.out.println("The dice is toss, it shows "+dice);
         if (dice >5){
             strength *= 2;

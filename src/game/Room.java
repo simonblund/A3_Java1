@@ -7,7 +7,8 @@ public class Room {
     //private String name;
     private String description;
     private Monster monster;
-    //private Treasure treasure;
+    private Treasure treasure;
+    private boolean salesman;
 
     // Setters and getters
 
@@ -25,6 +26,22 @@ public class Room {
 
     public void setMonster(Monster monster) {
         this.monster = monster;
+    }
+
+    public Treasure getTreasure() {
+        return treasure;
+    }
+
+    public void setTreasure(Treasure treasure) {
+        this.treasure = treasure;
+    }
+
+    public boolean isSalesman() {
+        return salesman;
+    }
+
+    public void setSalesman(boolean salesman) {
+        this.salesman = salesman;
     }
 
 

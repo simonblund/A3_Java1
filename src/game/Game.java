@@ -29,9 +29,6 @@ public class Game {
         Scanner sc = new Scanner(System.in);
         boolean active = true;
 
-
-        MonsterMaker.monstersInList(); // TODO remove this line before turn in.
-
         System.out.println("1. New Game");
         System.out.println("2. Scoreboard");
         System.out.println("3. Exit");
