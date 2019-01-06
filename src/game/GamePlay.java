@@ -1,5 +1,5 @@
 package game;
-
+import utility.WelcomeMessage;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -13,6 +13,8 @@ public class GamePlay {
         String direction;
         Random dice = new Random();
         Boolean running = true;
+        WelcomeMessage.welcomePlayer();
+        
         while(running){
 
             System.out.print("Your coordinates: "+x+" : "+y);
