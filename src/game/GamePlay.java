@@ -21,6 +21,8 @@ public class GamePlay {
             System.out.println();
 
             System.out.print("Your coordinates: "+x+" : "+y); //prints the player's current location.
+            Map.setVisited(x,y);
+
             System.out.println();
 
             if(Map.getLocationDescription(x,y)!=null){
@@ -39,7 +41,7 @@ public class GamePlay {
             }
 
 
-            System.out.println("Where do you want to go? (north, south, east or west).");
+            System.out.println("Where do you want to go? (north, south, east or west). or press m to look at map");
             direction = input.nextLine();
 
             // this switch allows the player to move over the map.
@@ -76,6 +78,10 @@ public class GamePlay {
                         System.out.println("You can't go further west.");
                         x = x+1;
                     }
+                    break;
+
+                case("m"):
+                    Map.map();
                     break;
 
             }

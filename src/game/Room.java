@@ -9,6 +9,7 @@ public class Room {
     private Monster monster;
     private Treasure treasure;
     private boolean salesman;
+    private boolean visited = false;
 
     // Setters and getters
 
@@ -42,6 +43,14 @@ public class Room {
 
     public void setSalesman(boolean salesman) {
         this.salesman = salesman;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
 
 
