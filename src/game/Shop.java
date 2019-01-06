@@ -156,6 +156,7 @@ public class Shop {
             System.out.println("You were knocked unconciuos. After a while, you wake up.\n");
             
             System.out.println("Salesman: As i said, you are my only customer. Thats why I let you live. Now buy some stuff or get lost!\n");
+            player.setHealth(100);
             
         } else{
             System.out.println("You defeated the salesman! You steal the key, and shuffle some dirt on him to cover your tracks.\n");
