@@ -6,7 +6,7 @@ import generators.TreasureGenerator;
 import java.util.ArrayList;
 
 public class TreasureRepository {
-    public static ArrayList<Treasure> treasures;
+    public static ArrayList<Treasure> treasures = new ArrayList<>();
 
 
     public static void generateTreasures(){
