@@ -29,7 +29,7 @@ public class Map {
     }
 
     public static void map(){
-        for(int i = y-1; i >0; i--){
+        for(int i = y-1; i >=0; i--){
             String visitinrow = "";
 
             for(int j=0; j<x; j++){

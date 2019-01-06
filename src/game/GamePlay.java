@@ -23,6 +23,8 @@ public class GamePlay {
             System.out.print("Your coordinates: "+x+" : "+y); //prints the player's current location.
             System.out.println();
 
+            Map.setVisited(x,y);
+
             if(Map.getLocationDescription(x,y)!=null){
                 System.out.print(Map.getLocationDescription(x, y)); // If the room has a description
             }
@@ -39,7 +41,7 @@ public class GamePlay {
             }
 
 
-            System.out.println("Where do you want to go? (north, south, east or west).");
+            System.out.println("Where do you want to go? (north, south, east or west). Press m to show map.");
             direction = input.nextLine();
 
             // this switch allows the player to move over the map.
@@ -77,7 +79,8 @@ public class GamePlay {
                         x = x+1;
                     }
                     break;
-
+                case("m"):
+                    Map.map();
             }
 
         }
