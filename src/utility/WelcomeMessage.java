@@ -11,7 +11,9 @@ package utility;
  */
 public class WelcomeMessage {
     public static void welcomePlayer(){
-        System.out.println("While on you regular walk through the woods, you fell down sinkhole. You appear to be in a large dark cave, littered with and filth and skeletons, some of which are human. You need to get out of here! Luckily you always bring your GPS navigation device with you when your'e out walking. Use WASD to move around.");
+        System.out.println("While on you regular walk through the woods, you fell down sinkhole. You appear to be in a large dark cave, \n"
+                + "littered with and filth. Bones from animals and humans are scattered through the cave - and they all have bitemarks on them. You need to get out of here! Luckily you always bring \n"
+                + "your GPS navigation device with you when your'e out walking. Use WASD to move around.");
     }
     
 }
