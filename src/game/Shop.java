@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class Shop {
 
+    public static void encounterMessage() {
+        System.out.println("You have come across a salesman... which is a bit strange... considering the surroundings. \n"
+                + "Type 1 to look at the items for sale. Type 2 to talk to the salesman. Type 3 to leave.");
+    }
+    
     public static void encounterSalesman(Player player) {
 
 
@@ -21,7 +26,7 @@ public class Shop {
                     browseMerchantsItems(player);
                     break;
                 case ("2"):
-                    talkToMerchant();
+                    talkToMerchant(player);
                     break;
                 case ("3"):
                     running = false;
@@ -75,7 +80,7 @@ public class Shop {
 
     }//EOXbrowseMerchantsitems
 
-    public static void talkToMerchant() {
+    public static void talkToMerchant(Player player) {
         Scanner input = new Scanner(System.in);
         String answer;
         
@@ -110,7 +115,9 @@ public class Shop {
                     running = false;
                     break;
                 case ("2"):
-                    fightSalesman();
+                    
+                    fightSalesman(player);
+                    running = false;
                     break;
                 default:
                     System.out.println("Type 1 to do nothing. OR type 2 to kick his ass and steal the key.");
@@ -118,21 +125,22 @@ public class Shop {
                         
             }
         }
-        
-        
-        
-        
-        
-        
     }
 
-    public static void encounterMessage() {
-        System.out.println("You have come across a salesman... which is a bit strange... considering the surroundings. \n"
-                + "Type 1 to look at the items for sale. Type 2 to talk to the salesman. Type 3 to leave.");
 
-    }
     
-    public static void fightSalesman(){
+    public static void fightSalesman(Player player){
+        
+        Monster salesman = new Monster();
+        salesman.setHealth(500);
+        salesman.setStrength(50);
+        System.out.println("\n You take off your gloves and smack the salesmans face. The fight is on...\n\n");
+        System.out.println();
+        Fight.fightMonster(salesman, player);
+        
+        
+        
+            
     
     }
 }
