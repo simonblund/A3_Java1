@@ -12,7 +12,7 @@ public class Monster {
     private String description;
     private int strength;
     private int health;
-    private boolean boss;
+    private boolean boss = false;
 
     //Getters and Setters
 
