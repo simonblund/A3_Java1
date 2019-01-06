@@ -1,10 +1,12 @@
 package game;
-import utility.WelcomeMessage;
 
-import java.awt.*;
+import utility.WelcomeMessage;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Holds game logic.
+ */
 public class GamePlay {
 
     public static void play(Player player){

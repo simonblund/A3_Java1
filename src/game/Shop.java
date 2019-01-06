@@ -3,6 +3,9 @@ package game;
 import static game.Fight.hit;
 import java.util.Scanner;
 
+/**
+ * Holds everything related to the salesman.
+ */
 public class Shop {
 
     public static void encounterMessage() {
