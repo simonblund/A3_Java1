@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class Fight {
     public static void meetMonster(Monster monster, Player player, int x, int y){
-        if (monster.getHealth()>0){
+        if (monster.isBoss() && monster.getHealth()>0){
+            meetboss(monster, player);
+        }else if (monster.getHealth()>0){
             System.out.println("");
             System.out.println("");
             System.out.println("Something moves in the dark...");
@@ -102,6 +104,8 @@ public class Fight {
                         System.out.println("Awwh... it catched you");
                         fightboss(monster, player);
                     }
+                    running=false;
+                    break;
             }
         }
     }
