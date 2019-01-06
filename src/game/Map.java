@@ -34,9 +34,9 @@ public class Map {
 
             for(int j=0; j<x; j++){
                 if(location[j][i].isVisited()){
-                    visitinrow+=("X");
+                    visitinrow+=("X ");
                 } else {
-                    visitinrow+=("O");
+                    visitinrow+=("O ");
                 }
             }
             System.out.println(visitinrow);
