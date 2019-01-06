@@ -80,7 +80,7 @@ public class GamePlay {
                     }
                     break;
                 case("m"):
-                    Map.map();
+                    Map.map(x,y);
             }
 
         }

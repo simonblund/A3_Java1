@@ -28,14 +28,21 @@ public class Map {
         return location[x][y].isSalesman();
     }
 
-    public static void map(){
+    public static void map(int a, int b){
         for(int i = y-1; i >=0; i--){
             String visitinrow = "";
 
             for(int j=0; j<x; j++){
+
                 if(location[j][i].isVisited()){
-                    visitinrow+=("X ");
-                } else {
+                    if(i==b & j==a){
+                        visitinrow+=("X ");
+                    } else{
+                        visitinrow+=("* ");
+                    }
+                }
+
+                else {
                     visitinrow+=("O ");
                 }
             }

@@ -12,6 +12,7 @@ public class Monster {
     private String description;
     private int strength;
     private int health;
+    private boolean boss;
 
     //Getters and Setters
 
@@ -45,6 +46,14 @@ public class Monster {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public boolean isBoss() {
+        return boss;
+    }
+
+    public void setBoss(boolean boss) {
+        this.boss = boss;
     }
 
     // Methods

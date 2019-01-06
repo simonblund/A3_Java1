@@ -43,4 +43,8 @@ public class MonsterMaker {
             }
         }
     }
+
+    public static void generateBoss(){
+
+    }
 }
