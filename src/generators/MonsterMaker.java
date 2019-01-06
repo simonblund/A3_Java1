@@ -44,7 +44,13 @@ public class MonsterMaker {
         }
     }
 
-    public static void generateBoss(){
-
+    public static Monster generateBoss(){
+        Monster boss = new Monster();
+        boss.setStrength(40);
+        boss.setHealth(300);
+        boss.setName("Janet in accounting");
+        boss.setDescription("I'm the boss around here.");
+        boss.setBoss(true);
+        return boss;
     }
 }

@@ -14,13 +14,6 @@ public class RoomGenerator {
     private static Monsters unusedGameMonsters = Game.gameMonsters;
     private static List<Monster> monsters = unusedGameMonsters.getMonsters();
 
-    private static Room exampleRoom(){
-        Room eroom = new Room();
-        String des = "Ett exempelrum" + Math.random();
-        eroom.setDescription(des);
-        return eroom;
-    }
-
     private static Room generatedRoom(){
         Room groom = new Room();
         int randomMonster = new Random().nextInt(monsters.size());
@@ -38,12 +31,21 @@ public class RoomGenerator {
         return groom;
     }
 
+    private static void placeBoss(){
+        Monster boss = MonsterMaker.generateBoss();
+        int i = new Random().nextInt(6);
+        int j = new Random().nextInt(6);
+        Map.setRoomMonster(i,j,boss);
+
+    }
+
     public static void placeExampleRooms(){
         for(int x = 0; x < 6; x++){
             for(int y = 0; y<6; y++){
                 Map.roomToMap(x,y,generatedRoom());
             }
         }
+        placeBoss();
 
     }
 }

@@ -22,6 +22,8 @@ public class Map {
         return location[x][y].getMonster();
     }
 
+    public static void setRoomMonster(int x, int y, Monster monster){location[x][y].setMonster(monster);}
+
     public static void setVisited(int x, int y){location[x][y].setVisited(true);}
 
     public static boolean foundSalesman(int x, int y){
