@@ -4,15 +4,37 @@ import java.util.Scanner;
 
 public class Shop {
     public static void encounterSalesman(Player player){
-        System.out.println("You come across a salesman. Type 1 to look at the items for sale. Type any other NUMBER-key to leave.");
-        Scanner input = new Scanner(System.in);
-        int choice = input.nextInt();
-        if (choice == 1){
-            browseMerchantsItems(player);
-        }
-        else {
-            System.out.println("You leave without buying anything. Perhaps you will meet the salesman again.");
-        }
+        
+
+            
+            
+            encounterMessage();
+            
+            Scanner input = new Scanner(System.in);
+            String choice = input.nextLine();
+
+            boolean running = true;
+            while (running = true) {
+                switch(choice){
+                    case ("1"):
+                        browseMerchantsItems(player);
+                        encounterMessage();
+                        choice = input.nextLine();
+                        break;
+                    case ("2"):
+                        talkToMerchant();
+                        encounterMessage();
+                        choice = input.nextLine();
+                        break;
+                    case ("3"):
+                        running = false;
+                        break;
+                    default:
+                        choice = input.nextLine();
+                        break;
+                 }
+            }
+
     }
 
     public static void browseMerchantsItems(Player player){
@@ -50,4 +72,14 @@ public class Shop {
         }
 
     }//EOXbrowseMerchantsitems
+    
+    public static void talkToMerchant(){
+     System.out.println("Hey, what are you doing here?");
+    }
+    
+    public static void encounterMessage(){
+        System.out.println("You come across a salesman... which is a bit strange considering the surroundings. \n"
+                + "Type 1 to look at the items for sale. Type 2 to talk to the salesman. Type 3 to leave.");
+        
+    }
 }

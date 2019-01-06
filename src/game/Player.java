@@ -47,7 +47,10 @@ public class Player {
         this.gold = gold;
     }
 
-
+    public void printStats (){
+        System.out.println();
+    
+    }
     // backpack, path, current room?
 
 }
