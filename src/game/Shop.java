@@ -14,7 +14,7 @@ public class Shop {
             String choice = input.nextLine();
 
             boolean running = true;
-            while (running = true) {
+            while (running) {
                 switch(choice){
                     case ("1"):
                         browseMerchantsItems(player);
