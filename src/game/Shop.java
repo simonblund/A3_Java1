@@ -35,6 +35,11 @@ public class Shop {
 
     public static void browseMerchantsItems(Player player) {
         boolean browse = true;
+        
+        System.out.println();
+        System.out.println("The salesman is showing his wares. Mostly illegal drugs, off course. But there is also a few \n"
+                + "items that may come in handy in your current situation. \n ");
+        
 
         while (browse) {
 
@@ -58,7 +63,7 @@ public class Shop {
                     break;
 
                 case (2):
-                    System.out.println("You say goodbye to the salesman. Perhaps you will meet again.");
+                    System.out.println("Salesman: Thank you, come again!");
                     browse = false;
                     break;
 
@@ -71,12 +76,63 @@ public class Shop {
     }//EOXbrowseMerchantsitems
 
     public static void talkToMerchant() {
-        System.out.println("Hey, what are you doing here?");
+        Scanner input = new Scanner(System.in);
+        String answer;
+        
+        System.out.println("You: Hey man, what are you doing here?");
+        answer = input.nextLine();
+        System.out.println("Salesman: Me? Oh, nothin much... ");
+        answer = input.nextLine();
+        System.out.println("You: Im trapped in here, do you know the way out?");
+        answer = input.nextLine();
+        System.out.println("Salesman: Well of course! How else could i replentish my stock?");
+        answer = input.nextLine();
+        System.out.println("You: Tell me then.");
+        answer = input.nextLine();
+        System.out.println("Salesman: No.");
+        answer = input.nextLine();
+        System.out.println("You: Why not?");
+        answer = input.nextLine();
+        System.out.println("Salesman: Because there nothing in it for me. Besides, you are pretty much my only customer. \n"
+                + "If you leave, i'll have to close my shop.");
+        answer = input.nextLine();
+        System.out.println("You: But i may die in here!");
+        answer = input.nextLine();
+        System.out.println("Salesman: Ok, ok. The exit is hidden behind that big, big monster over there. And you need the key... which i have. I'll sell it to you for ONE MILLION COINS.");
+        answer = input.nextLine();
+        System.out.println("You realize now that you are dealing with a pure sociopath. Type 1 to do nothing. OR type 2 to kick his ass and steal the key.");
+        answer = input.nextLine();
+        
+        boolean running = true;
+        while (running){
+            switch (answer){
+                case ("1"):
+                    running = false;
+                    break;
+                case ("2"):
+                    fightSalesman();
+                    break;
+                default:
+                    System.out.println("Type 1 to do nothing. OR type 2 to kick his ass and steal the key.");
+                    break;
+                        
+            }
+        }
+        
+        
+        
+        
+        
+        
     }
 
     public static void encounterMessage() {
         System.out.println("You have come across a salesman... which is a bit strange... considering the surroundings. \n"
                 + "Type 1 to look at the items for sale. Type 2 to talk to the salesman. Type 3 to leave.");
 
+    }
+    
+    public static void fightSalesman(){
+    
     }
 }
