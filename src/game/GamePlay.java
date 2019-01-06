@@ -15,7 +15,14 @@ public class GamePlay {
         Boolean running = true;
         while(running){
 
-            System.out.print(Map.getLocationDescription(x, y)); //Prints a description of the players current location.
+            System.out.print("Your coordinates: "+x+" : "+y);
+
+            if(Map.getLocationDescription(x,y).isEmpty()){
+
+            }else{
+                System.out.print(Map.getLocationDescription(x, y));
+            } //Prints a description of the players current location.
+
 
 
             if(Map.getRoomMonster(x,y)==null){
