@@ -33,7 +33,7 @@ public class GamePlay {
             if(Map.getRoomMonster(x,y)==null){
                 System.out.println("Phew, no monsters in this room.");
             } else{
-                Fight.meetMonster(Map.getRoomMonster(x,y), player);
+                Fight.meetMonster(Map.getRoomMonster(x,y), player, x, y);
             }
 
             if(Map.foundSalesman(x,y)){
@@ -89,7 +89,25 @@ public class GamePlay {
         System.out.println("Awwh, you died " + player.getName()+", better luck next time!");
     }
 
-    public static void lootTheRoom(){
+    public static void lootTheRoom(int x, int y, Player player){
+        Treasure treasure = Map.getTreasure(x,y);
+        System.out.println();
+        System.out.println("You peek behind the dead monster and see something...");
+        if(treasure.getCoin()==0){
+            System.out.println("Ooh a bottle of something, what does it say?");
+            System.out.println(treasure.getName());
+            System.out.println("That sounds interesting.");
+            System.out.println(treasure.getName());
+            System.out.println("You drink the potion and suddenly you feel healthier, health increases with " + treasure.getHealth());
+            int health = player.getHealth()+treasure.getHealth();
+            player.setHealth(health);
+        } else {
+            System.out.println("Ooh "+ treasure.getCoin()+" coins!");
+            System.out.println("");
+            int coins = player.getGold() + treasure.getCoin();
+            player.setGold(coins);
+        }
+
 
     }
 

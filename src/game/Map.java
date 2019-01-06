@@ -26,6 +26,8 @@ public class Map {
 
     public static void setVisited(int x, int y){location[x][y].setVisited(true);}
 
+    public static Treasure getTreasure(int x, int y){return location[x][y].getTreasure();}
+
     public static boolean foundSalesman(int x, int y){
         return location[x][y].isSalesman();
     }

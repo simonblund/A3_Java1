@@ -4,7 +4,7 @@ import utility.Dice;
 import java.util.Scanner;
 
 public class Fight {
-    public static void meetMonster(Monster monster, Player player){
+    public static void meetMonster(Monster monster, Player player, int x, int y){
         if (monster.getHealth()>0){
             System.out.println("");
             System.out.println("");
@@ -24,7 +24,7 @@ public class Fight {
             System.out.println(res);
             if(res < 5){
                 System.out.println("You decide to fight the monster.");
-                fightMonster(monster, player);
+                fightMonster(monster, player, x, y);
             }
         }
 
@@ -32,7 +32,7 @@ public class Fight {
 
     }
 
-    public static void fightMonster(Monster monster, Player player){
+    public static void fightMonster(Monster monster, Player player, int x, int y){
         System.out.println();
         System.out.println("You hit the monster with all your strength.");
         while(player.getHealth()>0 && monster.getHealth()>0) {
@@ -51,7 +51,7 @@ public class Fight {
         if(player.getHealth()<1){
             GamePlay.playerDead(player);
         } else{
-            GamePlay.lootTheRoom();
+            GamePlay.lootTheRoom(x,y, player);
         }
 
     }
