@@ -104,6 +104,8 @@ public class Fight {
                         System.out.println("Awwh... it catched you");
                         fightboss(monster, player);
                     }
+                    running=false;
+                    break;
             }
         }
     }
