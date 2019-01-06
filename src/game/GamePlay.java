@@ -39,7 +39,7 @@ public class GamePlay {
             }
 
 
-            System.out.println("Where do you want to go? (north, south, east or west).");
+            System.out.println("Use WASD to move around.");
             direction = input.nextLine();
 
             // this switch allows the player to move over the map.
