@@ -119,6 +119,8 @@ public class Fight {
         boolean running = true;
         while (running) {
             switch (choice) {
+                default:
+                    choice = "2";
                 case ("1"):
                     fightboss(monster, player);
                     running = false;

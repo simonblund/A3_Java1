@@ -1,6 +1,5 @@
 package repository;
 
-import game.Monster;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -11,8 +10,10 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 
+/**
+ * Monster XML Parse puts the monsters in the XML, and takes them out of there when they are needed.
+ */
 
 public class MonsterXMLparse {
 

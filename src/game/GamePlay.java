@@ -1,8 +1,12 @@
 package game;
+
 import utility.WelcomeMessage;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Holds game logic.
+ */
 public class GamePlay {
 
     public static void play(Player player){
@@ -86,7 +90,10 @@ public class GamePlay {
         }
     }//EOM play
     public static void playerDead(Player player){
+        System.out.println(utility.Artwork.devil());
         System.out.println("Awwh, you died " + player.getName()+", better luck next time!");
+
+        System.exit(0);
     }
 
     public static void lootTheRoom(int x, int y, Player player){

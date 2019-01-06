@@ -1,5 +1,9 @@
 package game;
 
+/**
+ * Player is the class of the player.
+ */
+
 public class Player {
     private String name;
     private int health;
