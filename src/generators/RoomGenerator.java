@@ -24,8 +24,8 @@ public class RoomGenerator {
     private static Room generatedRoom(){
         Room groom = new Room();
         int randomMonster = new Random().nextInt(monsters.size());
-        boolean monsterPresent = (new Random().nextInt(10)==1); // 3 in 10 chance there is a monster in the room.
-        boolean randomSalesman = (new Random().nextInt(15)==1); // 1 in 9 chance there is a salesman in the room.
+        boolean monsterPresent = (new Random().nextInt(5)==1); // 3 in 10 chance there is a monster in the room.
+        boolean randomSalesman = (new Random().nextInt(10)==1); // 1 in 9 chance there is a salesman in the room.
 
         if(monsterPresent){
             groom.setMonster(monsters.get(randomMonster)); // Set a random monster to the room.
