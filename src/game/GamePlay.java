@@ -16,9 +16,10 @@ public class GamePlay {
         while(running){
 
 
-            System.out.println("");
+            System.out.println();
 
             System.out.print("Your coordinates: "+x+" : "+y); //prints the player's current location.
+            System.out.println();
 
             if(Map.getLocationDescription(x,y)!=null){
                 System.out.print(Map.getLocationDescription(x, y)); // If the room has a description
