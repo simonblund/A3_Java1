@@ -17,7 +17,7 @@ public class GamePlay {
 
             System.out.print("Your coordinates: "+x+" : "+y);
 
-            if(!Map.getLocationDescription(x,y).isEmpty()){
+            if(Map.getLocationDescription(x,y)!=null){
                 System.out.print(Map.getLocationDescription(x, y));
             }
 
