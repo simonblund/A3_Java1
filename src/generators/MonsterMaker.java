@@ -1,4 +1,4 @@
-package test;
+package generators;
 
 import game.Game;
 import game.Monster;

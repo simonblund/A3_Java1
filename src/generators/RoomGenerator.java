@@ -1,4 +1,4 @@
-package test;
+package generators;
 
 import game.Game;
 import game.Map;
@@ -7,10 +7,12 @@ import game.Room;
 import repository.Monsters;
 
 import java.util.List;
+import java.util.Random;
 
 public class RoomGenerator {
 
     private static Monsters unusedGameMonsters = Game.gameMonsters;
+    private static List<Monster> monsters = unusedGameMonsters.getMonsters();
 
     private static Room exampleRoom(){
         Room eroom = new Room();
@@ -21,13 +23,13 @@ public class RoomGenerator {
 
     private static Room generatedRoom(){
         Room groom = new Room();
-        List<Monster> monsters = unusedGameMonsters.getMonsters();
+        int randomMonster = new Random().nextInt(monsters.size());
+        boolean randomSalesman = (new Random().nextInt(8)==1); // 1 in 9 chance there is a salesman in the room.
 
-        for (int i = 0; i<monsters.size(); i++){
-            groom.setMonster(monsters.get(i));
-            monsters.remove(i);
-        }
-        groom.setDescription("Generated with generatedRoom");
+        groom.setMonster(monsters.get(randomMonster)); // Set a random monster to the room.
+        monsters.remove(randomMonster);
+
+        groom.setSalesman(randomSalesman);
         return groom;
     }
 

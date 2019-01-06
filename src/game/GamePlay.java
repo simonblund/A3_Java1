@@ -16,14 +16,23 @@ public class GamePlay {
         while(running){
 
             System.out.print(Map.getLocationDescription(x, y)); //Prints a description of the players current location.
-            Shop.encounterSalesman(player);
 
-            Fight.meetMonster(Map.getRoomMonster(x,y), player);
+
+            if(Map.getRoomMonster(x,y)==null){
+                System.out.println("Phew, no monsters in this room.");
+            } else{
+                Fight.meetMonster(Map.getRoomMonster(x,y), player);
+            }
+
+            if(Map.foundSalesman(x,y)){
+                Shop.encounterSalesman(player);
+            }
+
             System.out.println("");
             System.out.println("Where do you want to go? (north, south, east or west).");
             direction = input.nextLine();
 
-            // this switch allows tha player to move over the map.
+            // this switch allows the player to move over the map.
             switch(direction){
 
                 case("north"):
@@ -67,7 +76,7 @@ public class GamePlay {
         System.out.println("Awwh, you died " + player.getName()+", better luck next time!");
     }
 
-    public static void lootTheRooom(){
+    public static void lootTheRoom(){
 
     }
 

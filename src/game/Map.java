@@ -20,5 +20,9 @@ public class Map {
         return location[x][y].getMonster();
     }
 
+    public static boolean foundSalesman(int x, int y){
+        return location[x][y].isSalesman();
+    }
+
     
 }

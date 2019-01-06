@@ -2,8 +2,8 @@ package game;
 
 import repository.MonsterXMLparse;
 import repository.Monsters;
-import test.MonsterMaker;
-import test.RoomGenerator;
+import generators.MonsterMaker;
+import generators.RoomGenerator;
 import utility.Artwork;
 
 import java.util.ArrayList;
