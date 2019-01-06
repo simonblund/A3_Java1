@@ -6,6 +6,17 @@ public class Player {
     private int strength;
     private int gold;
     private int healthPotionsCarried;
+    private int key;
+
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
+    
+    
 
     public int getHealthPotions() {
         return healthPotionsCarried;

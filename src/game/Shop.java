@@ -1,9 +1,15 @@
 package game;
 
+import static game.Fight.hit;
 import java.util.Scanner;
 
 public class Shop {
 
+    public static void encounterMessage() {
+        System.out.println("You have come across a salesman... which is a bit strange... considering the surroundings. \n"
+                + "Type 1 to look at the items for sale. Type 2 to talk to the salesman. Type 3 to leave.");
+    }
+    
     public static void encounterSalesman(Player player) {
 
 
@@ -21,7 +27,7 @@ public class Shop {
                     browseMerchantsItems(player);
                     break;
                 case ("2"):
-                    talkToMerchant();
+                    talkToMerchant(player);
                     break;
                 case ("3"):
                     running = false;
@@ -75,7 +81,7 @@ public class Shop {
 
     }//EOXbrowseMerchantsitems
 
-    public static void talkToMerchant() {
+    public static void talkToMerchant(Player player) {
         Scanner input = new Scanner(System.in);
         String answer;
         
@@ -110,29 +116,56 @@ public class Shop {
                     running = false;
                     break;
                 case ("2"):
-                    fightSalesman();
+                    
+                    fightSalesman(player);
+                    running = false;
                     break;
                 default:
                     System.out.println("Type 1 to do nothing. OR type 2 to kick his ass and steal the key.");
+                    answer = input.nextLine();
                     break;
                         
             }
+        }
+    }
+
+
+    
+    public static void fightSalesman(Player player){
+        
+        Monster salesman = new Monster();
+        salesman.setHealth(500);
+        salesman.setStrength(50);
+        
+        System.out.println("\n You take off your gloves and smack the salesmans face. The fight is on...\n\n");
+        System.out.println();
+        while(player.getHealth()>0 && salesman.getHealth()>0) {
+            salesman.setHealth(hit(player.getStrength(), salesman.getHealth()));
+            System.out.println("You have health "+player.getHealth());
+            if(salesman.getHealth()<1){
+                System.out.println("You won!");
+                break;
+            }
+            System.out.println("The salesman has health "+salesman.getHealth());
+            player.setHealth(hit(salesman.getStrength(), player.getHealth()));
+            System.out.println("You have health "+player.getHealth());
+            System.out.println("The salesman has health "+salesman.getHealth());
+            System.out.println("");
+        }
+        if(player.getHealth()<1){
+            System.out.println("You were knocked unconciuos. After a while, you wake up.\n");
+            
+            System.out.println("Salesman: As i said, you are my only customer. Thats why I let you live. Now buy some stuff or get lost!\n");
+            
+        } else{
+            System.out.println("You defeated the salesman! You steal the key, and shuffle some dirt on him to cover your tracks.\n");
+            player.setKey(1);
         }
         
         
         
         
-        
-        
-    }
-
-    public static void encounterMessage() {
-        System.out.println("You have come across a salesman... which is a bit strange... considering the surroundings. \n"
-                + "Type 1 to look at the items for sale. Type 2 to talk to the salesman. Type 3 to leave.");
-
-    }
-    
-    public static void fightSalesman(){
+            
     
     }
 }
