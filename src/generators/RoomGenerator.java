@@ -24,10 +24,15 @@ public class RoomGenerator {
     private static Room generatedRoom(){
         Room groom = new Room();
         int randomMonster = new Random().nextInt(monsters.size());
+        boolean monsterPresent = (new Random().nextInt(10)<4); // 3 in 10 chance there is a monster in the room.
         boolean randomSalesman = (new Random().nextInt(8)==1); // 1 in 9 chance there is a salesman in the room.
 
-        groom.setMonster(monsters.get(randomMonster)); // Set a random monster to the room.
-        monsters.remove(randomMonster);
+        if(monsterPresent){
+            groom.setMonster(monsters.get(randomMonster)); // Set a random monster to the room.
+            monsters.remove(randomMonster); // remove the monster inserted from the list of available monsters.
+        }
+
+
 
         groom.setSalesman(randomSalesman);
         return groom;

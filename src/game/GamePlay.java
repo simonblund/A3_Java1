@@ -17,10 +17,14 @@ public class GamePlay {
         
         while(running){
 
-            System.out.print("Your coordinates: "+x+" : "+y);
+
+            System.out.println();
+
+            System.out.print("Your coordinates: "+x+" : "+y); //prints the player's current location.
+            System.out.println();
 
             if(Map.getLocationDescription(x,y)!=null){
-                System.out.print(Map.getLocationDescription(x, y));
+                System.out.print(Map.getLocationDescription(x, y)); // If the room has a description
             }
 
 
@@ -34,7 +38,7 @@ public class GamePlay {
                 Shop.encounterSalesman(player);
             }
 
-            System.out.println("");
+
             System.out.println("Where do you want to go? (north, south, east or west).");
             direction = input.nextLine();
 
