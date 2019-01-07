@@ -30,10 +30,9 @@ public class Game {
         boolean active = true;
 
         System.out.println("1. New Game");
-        System.out.println("2. Scoreboard");
-        System.out.println("3. Exit");
-        System.out.println("4. Create your own monster");
-        System.out.println("5. Save your monsters to File");
+        System.out.println("2. Exit");
+        System.out.println("3. Create your own monster");
+        System.out.println("4. Save your monsters to File");
 
         while(active) {
             int choice = sc.nextInt();
@@ -43,18 +42,14 @@ public class Game {
                     break;
                 }
                 case 2: {
-                    scoreboard();
-                    break;
-                }
-                case 3: {
                     System.exit(0);
                     break;
                 }
-                case 4: {
+                case 3: {
                     MonsterMaker.monsterForm();
                     break;
                 }
-                case 5: {
+                case 4: {
                     MonsterXMLparse.setMonsters(gameMonsters);
                     break;
                 }
@@ -76,11 +71,5 @@ public class Game {
         player.setStrength(10);
         RoomGenerator.placeExampleRooms();
         GamePlay.play(player);
-    }
-
-    
-
-    private static void scoreboard(){
-
     }
 }
