@@ -55,7 +55,7 @@ public class Shop {
             
             System.out.println("You have" +player.getGold()+ " coin.");
             System.out.println("1. Buy a health potion for 50 coin.");
-            System.out.println("2. Buy weapon upgrade. for 100 coin.");
+            System.out.println("2. Buy weapon upgrade. for 30 coin.");
             System.out.println("3. Stop shopping.");
 
             Scanner input = new Scanner(System.in);
@@ -75,9 +75,9 @@ public class Shop {
                     break;
                 
                 case (2):
-                    if (player.getGold() >=50){
-                        player.setGold(player.getGold()-50);
-                        player.setStrength(player.getStrength() +2);
+                    if (player.getGold() >=30){
+                        player.setGold(player.getGold()-30);
+                        player.setStrength(player.getStrength() +30);
                         System.out.println("You bought a weapon upgrade. You now do " + player.getStrength() +" damage.");
                     } else {
                         System.out.println("You dont have enough coin.");
