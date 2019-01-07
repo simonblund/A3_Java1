@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Fight {
     public static void meetMonster(Monster monster, Player player, int x, int y){
+        // Daniel & Simon
         if (monster.isBoss() && monster.getHealth()>0){
             meetboss(monster, player);
         }else if (monster.getHealth()>0){
@@ -90,6 +91,7 @@ public class Fight {
     }
 
     public static int hit(int strength, int health){
+        // Simon
         int dice = Dice.dice();
         System.out.println("The dice is toss, it shows "+dice);
         if (dice >5){
@@ -99,6 +101,7 @@ public class Fight {
     }
 
     public static void meetboss(Monster monster, Player player) {
+        // Simon
         Scanner sc = new Scanner(System.in);
         System.out.println(utility.Artwork.devil());
         System.out.println();
@@ -143,6 +146,7 @@ public class Fight {
         }
     }
     public static void fightboss(Monster monster, Player player){
+        // Simon
         System.out.println("You get ready for the fight of the century");
         while(player.getHealth()>0 && monster.getHealth()>0) {
             monster.setHealth(hit(player.getStrength(), monster.getHealth()));

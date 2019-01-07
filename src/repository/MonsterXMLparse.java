@@ -16,6 +16,7 @@ import java.nio.file.Paths;
  */
 
 public class MonsterXMLparse {
+    // Simon
 
     public static void setMonsters(Monsters monsters){
         try(BufferedWriter output = Files.newBufferedWriter(Paths.get("monsters.xml"))){

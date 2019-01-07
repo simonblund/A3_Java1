@@ -5,6 +5,7 @@ package game;
  */
 
 public class Player {
+    // Simon & Daniel
     private String name;
     private int health;
     private int strength;

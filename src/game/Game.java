@@ -9,16 +9,21 @@ import utility.Artwork;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Main class of the program.
+ */
+
 public class Game {
     /*
     FIELDS / ATTRIBUTES
      */
-    public static Monsters gameMonsters = new Monsters();
+    public static Monsters gameMonsters = new Monsters(); // Simon
 
     /*
     METHODS
      */
     public static void main(String[] args) {
+        // Simon
         System.out.println(Artwork.gameName());
         gameMonsters.setMonsters(new ArrayList<Monster>());
         gameMonsters = MonsterXMLparse.getMonsters();
@@ -26,6 +31,7 @@ public class Game {
     }
 
     public static void gameMenu() {
+        // Simon
         Scanner sc = new Scanner(System.in);
         boolean active = true;
 
@@ -63,6 +69,7 @@ public class Game {
     } // EOM gameMenu
 
     private static void newGame(){
+        // Simon
         Player player = new Player();
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter your name below");

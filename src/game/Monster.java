@@ -1,10 +1,14 @@
 package game;
 
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ * Monster class.
+ */
 
 @XmlRootElement(name = "monster")
 public class Monster {
+    // Simon
 
     // Fields
 

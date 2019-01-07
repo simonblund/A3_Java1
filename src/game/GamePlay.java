@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class GamePlay {
 
     public static void play(Player player){
+        // Daniel
 
         Scanner input = new Scanner(System.in);
         int x = 0; //x and y are used to navigate through the game. x corresponds to the maps x-axis, y to the maps y-axis.
@@ -90,6 +91,7 @@ public class GamePlay {
         }
     }//EOM play
     public static void playerDead(Player player){
+        // Simon
         System.out.println(utility.Artwork.devil());
         System.out.println("Awwh, you died " + player.getName()+", better luck next time!");
 
@@ -97,6 +99,7 @@ public class GamePlay {
     }
 
     public static void lootTheRoom(int x, int y, Player player){
+        // Simon
         Treasure treasure = Map.getTreasure(x,y);
         System.out.println();
         System.out.println("You peek behind the dead monster and see something...");

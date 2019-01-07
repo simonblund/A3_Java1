@@ -1,6 +1,10 @@
 package game;
 
+/**
+ * Keeps track of things related to location.
+ */
 public class Map {
+    // Simon
     private static int x = 6;
     private static int y = 6;
 

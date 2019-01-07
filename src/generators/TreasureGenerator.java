@@ -3,7 +3,12 @@ package generators;
 import game.Treasure;
 import repository.TreasureRepository;
 
+/**
+ * Generates treasures and adds them to the treasure array in the repository.
+ */
+
 public class TreasureGenerator {
+    // Simon
     public static void newPotion(String name, String desc, int health){
         Treasure np = new Treasure();
         np.setName(name);

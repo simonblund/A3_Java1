@@ -2,12 +2,15 @@ package generators;
 
 import game.Game;
 import game.Monster;
-import repository.Monsters;
-
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Form to create new monsters from the UI.
+ */
+
 public class MonsterMaker {
+    // Simon
     public static void monsterForm(){
         Scanner sc = new Scanner(System.in);
 

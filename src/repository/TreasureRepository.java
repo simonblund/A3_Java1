@@ -5,7 +5,12 @@ import generators.TreasureGenerator;
 
 import java.util.ArrayList;
 
+/**
+ * Repository for treasures.
+ */
+
 public class TreasureRepository {
+    // Simon
     public static ArrayList<Treasure> treasures = new ArrayList<>();
 
 

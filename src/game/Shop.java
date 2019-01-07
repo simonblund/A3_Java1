@@ -7,6 +7,7 @@ import java.util.Scanner;
  * Holds everything related to the salesman.
  */
 public class Shop {
+    // Daniel
 
     public static void encounterMessage() {
         System.out.println("You have come across a salesman... which is a bit strange... considering the surroundings. \n"

@@ -7,7 +7,12 @@ import repository.TreasureRepository;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Generates rooms and adds the Room array.
+ */
+
 public class RoomGenerator {
+    // Simon
 
     private static Monsters unusedGameMonsters = Game.gameMonsters;
     private static List<Monster> monsters = unusedGameMonsters.getMonsters();

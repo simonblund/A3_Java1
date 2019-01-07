@@ -1,8 +1,13 @@
 package utility;
 
 public class Artwork {
+    /**
+     *
+     * Utility to manage asciiart.
+     */
 
     public static String gameName(){
+        // Simon
         return "\n" +
                 "\n" +
                 "  ______    _______        __       __   __  ___  ___       _______   _______   \n" +
@@ -17,6 +22,7 @@ public class Artwork {
     }
 
     public static String devil(){
+        // Simon
         return " @@@@@                                        @@@@@\n" +
                 "@@@@@@@                                      @@@@@@@\n" +
                 "@@@@@@@           @@@@@@@@@@@@@@@            @@@@@@@\n" +

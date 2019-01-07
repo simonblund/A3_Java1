@@ -7,6 +7,7 @@ package game;
  */
 
 public class Treasure {
+    // Simon
     private String name;
     private String description;
     private int health;
