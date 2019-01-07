@@ -51,9 +51,11 @@ public class Shop {
         
 
         while (browse) {
-
+            
+            System.out.println("You have" +player.getGold()+ " coin.");
             System.out.println("1. Buy a health potion for 50 coin.");
-            System.out.println("2. Stop shopping.");
+            System.out.println("2. Buy weapon upgrade. for 100 coin.");
+            System.out.println("3. Stop shopping.");
 
             Scanner input = new Scanner(System.in);
             int choice = input.nextInt();
@@ -64,14 +66,24 @@ public class Shop {
 
                     if (player.getGold() >= 50) {
                         player.setGold(player.getGold() - 50);
-                        player.setHealthPotions(player.getHealthPotions() + 1);
-                        System.out.println("You bought a healt potion. You now have" + player.getHealthPotions() + " healt potions in your inventory.");
+                        player.setHealth(player.getHealth()+100);
+                        System.out.println("You bought a healt potion. You now have" + player.getHealth() + " health.");
                     } else {
                         System.out.println("You dont have enough coin.");
                     }
                     break;
-
+                
                 case (2):
+                    if (player.getGold() >=50){
+                        player.setGold(player.getGold()-50);
+                        player.setStrength(player.getStrength() +2);
+                        System.out.println("You bought a weapon upgrade. You now do " + player.getStrength() +" damage.");
+                    } else {
+                        System.out.println("You dont have enough coin.");
+                    }
+                    break;
+                
+                case (3):
                     System.out.println("Salesman: Thank you, come again!");
                     browse = false;
                     break;

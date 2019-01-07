@@ -14,20 +14,51 @@ public class Fight {
             System.out.println("You look closer, and suddenly you see a beast..");
             System.out.println("It is the "+monster.getName()+", and it looks angry.");
             System.out.println(monster.getName()+" has a health score of "+monster.getHealth()+" and a strength of "+monster.getStrength());
-
             System.out.println("Your stats are Health: "+player.getHealth()+" and strength "+player.getStrength());
-            System.out.println("You try and make up your mind whether you'll fight it or run away but can't make up your mind, press ENTER to continue");
+            
+            System.out.println("Type 1 to fight the monster. Type 2 to run away.");
+            
             Scanner click = new Scanner(System.in);
-            click.nextLine();
-            System.out.println("You decide to use a dice to make the decision, if the dice shows 5 or 6 you'll run away.");
-
-            int res = utility.Dice.dice();
-            System.out.println("You roll the dice...");
-            System.out.println(res);
-            if(res < 5){
-                System.out.println("You decide to fight the monster.");
-                fightMonster(monster, player, x, y);
+            String answer = click.nextLine();
+            boolean running = true;
+            
+            while (running){
+                switch (answer){
+                    
+                    case ("1"):
+                        
+                        System.out.println("You decide to fight the monster!");
+                        fightMonster(monster, player, x, y);
+                        running = false;
+                        break;
+                        
+                    case ("2"):
+                        
+                        System.out.println("You try to run away!");
+                        int res = utility.Dice.dice();
+                        if(res < 4){
+                            System.out.println("You succeeded in running away."); 
+                            running = false;
+                        } else {
+                            player.setHealth(player.getHealth()-10);
+                            System.out.println("The monster catches up with you. It bites you in the back, dealing 10 damage.\n"
+                                    + " This make syou run even faster, succeeding in running away."
+                                    + "You now have " + player.getHealth() + "health.");
+                            running = false;
+                        }
+                        
+                        break;
+                    
+                    default:
+                        answer = click.nextLine();
+                        break;
+                }
+                
+            
             }
+            
+           
+            
         }
 
 
