@@ -3,7 +3,7 @@ package game;
 import utility.Dice;
 import java.util.Scanner;
 
-public class Fight {
+ class Fight {
     public static void meetMonster(Monster monster, Player player, int x, int y){
         // Daniel & Simon
         if (monster.isBoss() && monster.getHealth()>0){
@@ -66,7 +66,7 @@ public class Fight {
 
     }
 
-    public static void fightMonster(Monster monster, Player player, int x, int y){
+    private static void fightMonster(Monster monster, Player player, int x, int y){
         System.out.println();
         System.out.println("You hit the monster with all your strength.");
         while(player.getHealth()>0 && monster.getHealth()>0) {
@@ -100,7 +100,7 @@ public class Fight {
         return health - strength;
     }
 
-    public static void meetboss(Monster monster, Player player) {
+    private static void meetboss(Monster monster, Player player) {
         // Simon
         Scanner sc = new Scanner(System.in);
         System.out.println(utility.Artwork.devil());
@@ -145,7 +145,7 @@ public class Fight {
             }
         }
     }
-    public static void fightboss(Monster monster, Player player){
+    private static void fightboss(Monster monster, Player player){
         // Simon
         System.out.println("You get ready for the fight of the century");
         while(player.getHealth()>0 && monster.getHealth()>0) {

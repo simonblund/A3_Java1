@@ -1,7 +1,6 @@
 package game;
 
 import utility.WelcomeMessage;
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -16,10 +15,9 @@ public class GamePlay {
         int x = 0; //x and y are used to navigate through the game. x corresponds to the maps x-axis, y to the maps y-axis.
         int y = 0;
         String direction;
-        Random dice = new Random();
-        Boolean running = true;
+
         WelcomeMessage.welcomePlayer();
-        
+        boolean running = true;
         while(running){
 
 

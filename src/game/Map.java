@@ -14,29 +14,28 @@ public class Map {
         if(location[x][y] == null){
             location[x][y] = room;
         }
-        else System.out.println("Error: Map location not empty");
-        // TODO remove the above line before turn-in.
+
 
     }
-    public static String getLocationDescription(int x, int y){
+    static String getLocationDescription(int x, int y){
         return location[x][y].getDescription();
     }
 
-    public static Monster getRoomMonster(int x, int y){
+    static Monster getRoomMonster(int x, int y){
         return location[x][y].getMonster();
     }
 
     public static void setRoomMonster(int x, int y, Monster monster){location[x][y].setMonster(monster);}
 
-    public static void setVisited(int x, int y){location[x][y].setVisited(true);}
+    static void setVisited(int x, int y){location[x][y].setVisited(true);}
 
-    public static Treasure getTreasure(int x, int y){return location[x][y].getTreasure();}
+    static Treasure getTreasure(int x, int y){return location[x][y].getTreasure();}
 
-    public static boolean foundSalesman(int x, int y){
+    static boolean foundSalesman(int x, int y){
         return location[x][y].isSalesman();
     }
 
-    public static void map(int a, int b){
+    static void map(int a, int b){
         for(int i = y-1; i >=0; i--){
             String visitinrow = "";
 
