@@ -164,7 +164,7 @@ import java.util.Scanner;
         if(player.getHealth()<1){
             GamePlay.playerDead(player);
         } else{
-            System.out.println("Congratulations");
+            System.out.println("Congratulations! You exit the cave into the world above.");
         }
     }
 }
